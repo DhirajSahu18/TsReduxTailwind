@@ -1,10 +1,22 @@
-import { Counter } from './features/counter/Counter';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import HomePage from './pages/HomePage';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <>
+      <HomePage/>
+    </>,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-5xl underline text-red-800 text-center">Hii</h1>
-      <Counter />
+    <div className="App bg-[#1E1E1E] text-white">
+      <RouterProvider router={router} />
     </div>
   );
 }
